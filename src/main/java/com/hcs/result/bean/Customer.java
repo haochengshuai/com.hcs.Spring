@@ -9,10 +9,12 @@ public class Customer{
 	@Id
 	private Long id;
 
+	private String username;
+	private Integer age;
+	
+	
 	public Customer() {
 	}
-	    private String username;
-	    private Integer age;
 
 	    public Customer(Long id, String username, Integer age) {
 	        this.id = id;

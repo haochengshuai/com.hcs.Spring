@@ -3,6 +3,8 @@ package com.hcs.result.web;
 import java.util.Date;
 import java.util.Map;
 
+import javax.persistence.Entity;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
