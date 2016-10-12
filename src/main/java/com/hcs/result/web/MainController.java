@@ -3,8 +3,6 @@ package com.hcs.result.web;
 import java.util.Date;
 import java.util.Map;
 
-import javax.persistence.Entity;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -24,15 +22,20 @@ public class MainController {
 	private MongoTemplate mongoTemplate;
 
 	@RequestMapping("/")
+	public String index(Map<String, Object> model) {
+		return "index.html";
+	}
+	
+	@RequestMapping("/wel")
 	public String welcome(Map<String, Object> model) {
 		model.put("time", new Date());
 		model.put("message", this.message);
-		return "welcome";
+		return "/WEB-INF/jsp/wel.html";
 	}
 
 	@RequestMapping("/foo")
 	public String foo(Map<String, Object> model) {
-		throw new RuntimeException("Foo");
+		return "/WEB-INF/jsp/foo.jsp";
 	}
 	
 	@RequestMapping("/customer")
@@ -40,8 +43,6 @@ public class MainController {
 	public String customer() {
 		Customer tracker = new Customer();
 		tracker.setUsername("test");
-		tracker.setId(1L);
-		tracker.setAge(11);
 		this.mongoTemplate.insert(tracker);
 		
 		return tracker.toString();

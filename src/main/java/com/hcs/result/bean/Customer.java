@@ -3,30 +3,31 @@ package com.hcs.result.bean;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "customer")
 public class Customer{
 
 	@Id
-	private Long id;
+	private String id;
 
 	private String username;
-	private Integer age;
+	private String age;
 	
 	
 	public Customer() {
 	}
 
-	    public Customer(Long id, String username, Integer age) {
+	    public Customer( String username, String age) {
 	        this.id = id;
 	        this.username = username;
 	        this.age = age;
 	    }
 
-		public Long getId() {
+		
+
+		public String getId() {
 			return id;
 		}
 
-		public void setId(Long id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 
@@ -38,11 +39,11 @@ public class Customer{
 			this.username = username;
 		}
 
-		public Integer getAge() {
+		public String getAge() {
 			return age;
 		}
 
-		public void setAge(Integer age) {
+		public void setAge(String age) {
 			this.age = age;
 		}
 
