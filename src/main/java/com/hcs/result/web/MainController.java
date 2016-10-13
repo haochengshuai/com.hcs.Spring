@@ -1,6 +1,5 @@
 package com.hcs.result.web;
 
-import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,21 +21,15 @@ public class MainController {
 	private MongoTemplate mongoTemplate;
 
 	@RequestMapping("/")
-	public String index(Map<String, Object> model) {
-		return "index.html";
+	public String blog(Map<String, Object> model) {
+		return "/blog/blog.html";
 	}
 	
-	@RequestMapping("/wel")
-	public String welcome(Map<String, Object> model) {
-		model.put("time", new Date());
-		model.put("message", this.message);
-		return "/WEB-INF/jsp/wel.html";
+	@RequestMapping("/about/index")
+	public String index(Map<String, Object> model) {
+		return "/about/index.html";
 	}
 
-	@RequestMapping("/foo")
-	public String foo(Map<String, Object> model) {
-		return "/WEB-INF/jsp/foo.jsp";
-	}
 	
 	@RequestMapping("/customer")
 	@ResponseBody	
