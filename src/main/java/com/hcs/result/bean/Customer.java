@@ -1,7 +1,6 @@
 package com.hcs.result.bean;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Customer{
 
